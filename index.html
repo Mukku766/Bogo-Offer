@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BOGO Offer</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        color: #333;
+        text-align: center;
+        margin: 0;
+        padding: 20px;
+        background-color: #f9f9f9;
+    }
+
+    .container {
+        max-width: 400px;
+        margin: auto;
+        background: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        color: #f76491; 
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .option {
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 15px;
+        margin-bottom: 15px;
+        text-align: left;
+        position: relative;
+    }
+
+    .option input[type="radio"] {
+        margin-right: 10px;
+    }
+
+    .discount {
+        color: #fff;
+        background-color: #f76491; 
+        padding: 2px 6px;
+        font-size: 12px;
+        border-radius: 3px;
+        margin-left: 10px;
+    }
+
+    .price {
+        float: right;
+        font-size: 15px;
+    }
+
+    .most-popular {
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        background-color: #f76491; 
+        color: #fff;
+        padding: 5px 10px;
+        font-size: 12px;
+        border-radius: 3px;
+        font-weight: bold;
+    }
+
+    .strike {
+        text-decoration: line-through;
+        color: #aaa;
+        font-size: 13px;
+    }
+
+    .unit-options {
+        margin-top: 20px;
+    }
+
+    #size2{
+        margin-top: 20px;
+    }
+
+
+
+    .unit-options select {
+        padding: 5px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+
+    .free-delivery {
+        color: #f76491; 
+        font-weight: bold;
+    }
+
+    .total-price {
+        font-size: 16px;
+        margin-top: 10px;
+    }
+
+    .add-to-cart {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #f76491; 
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+        font-size: 16px;
+    }
+
+    .add-to-cart:hover {
+        background-color: #f54d7c;
+    }
+
+    footer {
+        font-size: 12px;
+        color: #aaa;
+        margin-top: 20px;
+    }
+
+    .option.active {
+        background-color: #f4bbcb46;
+        border: 2PX SOLID #f54d7c;
+    }
+</style>
+
+</head>
+<body>
+
+<div class="container">
+    <h2>YAY! It's BOGO</h2>
+
+    <!-- 1 Unit Option -->
+    <div class="option">
+        <input type="radio" name="unit" id="unit1" value="10" onclick="updateTotal(this, '1')">
+        <label for="unit1">
+            <span>1 Unit</span> <span class="discount">10% Off</span>
+            <span class="price">$10.00 USD <span class="strike">$24.00 USD</span></span>
+        </label>
+    
+
+    <!-- Size and Color Selection for 1 Unit -->
+    <div class="unit-options" id="unit-option-1" style="display: none;">
+        <span style="font-size: small;">#1</span> <select id="size2">
+            <option value="Small">Small</option>
+            <option value="Medium">Medium</option>
+            <option value="Large">Large</option>
+        </select>
+        <select id="color2-1">
+            <option value="Black">Black</option>
+            <option value="White">White</option>
+            <option value="Blue">Blue</option>
+        </select>
+        <br>
+        <span style="font-size: small;">#2</span> <select id="size2">
+            <option value="Small">Small</option>
+            <option value="Medium">Medium</option>
+            <option value="Large">Large</option>
+        </select>
+        <select id="color2-2">
+            <option value="Black">Black</option>
+            <option value="White">White</option>
+            <option value="Blue">Blue</option>
+        </select>
+    </div>
+</div>
+    <!-- 2 Units Option -->
+    <div class="option">
+        <input type="radio" name="unit" id="unit2" value="18" onclick="updateTotal(this, '2')">
+        <label for="unit2">
+            <span>2 Units</span> <span class="discount">20% Off</span>
+            <span class="price">$18.00 USD <span class="strike">$24.00 USD</span></span>
+        </label>
+        <div class="most-popular">MOST POPULAR</div>
+   
+
+    <!-- Size and Color Selection for 2 Units -->
+    <div class="unit-options" id="unit-option-2" style="display: none;">
+        <span style="font-size: small;">#1</span> <select id="size2">
+            <option value="Small">Small</option>
+            <option value="Medium">Medium</option>
+            <option value="Large">Large</option>
+        </select>
+        <select id="color2-1">
+            <option value="Black">Black</option>
+            <option value="White">White</option>
+            <option value="Blue">Blue</option>
+        </select>
+        <br>
+        <span style="font-size: small;">#2</span> <select id="size2">
+            <option value="Small">Small</option>
+            <option value="Medium">Medium</option>
+            <option value="Large">Large</option>
+        </select>
+        <select id="color2-2">
+            <option value="Black">Black</option>
+            <option value="White">White</option>
+            <option value="Blue">Blue</option>
+        </select>
+    </div>
+</div>
+    <!-- 3 Units Option -->
+    <div class="option">
+        <input type="radio" name="unit" id="unit3" value="24" onclick="updateTotal(this, '3')">
+        <label for="unit3">
+            <span>3 Units</span> <span class="discount">30% Off</span>
+            <span class="price">$24.00 USD <span class="strike">$24.00 USD</span></span>
+        </label>
+    
+
+    <!-- Size and Color Selection for 3 Units -->
+    <div class="unit-options" id="unit-option-3" style="display: none;">
+        <span style="font-size: small;">#1</span> <select id="size2">
+            <option value="Small">Small</option>
+            <option value="Medium">Medium</option>
+            <option value="Large">Large</option>
+        </select>
+        <select id="color2-1">
+            <option value="Black">Black</option>
+            <option value="White">White</option>
+            <option value="Blue">Blue</option>
+        </select>
+        <br>
+        <span style="font-size: small;">#2</span> <select id="size2">
+            <option value="Small">Small</option>
+            <option value="Medium">Medium</option>
+            <option value="Large">Large</option>
+        </select>
+        <select id="color2-2">
+            <option value="Black">Black</option>
+            <option value="White">White</option>
+            <option value="Blue">Blue</option>
+        </select>
+    </div>
+</div>
+<div style="display: flex; justify-content: space-between; ">
+    <p class="free-delivery">Free Delivery</p>
+    <p  class="total-price">Total: <span id="total">$18.00 USD</span></p></div>
+    <button class="add-to-cart">+ Add to Cart</button>
+
+
+<footer>@ Powered by Pumper</footer>
+
+<script>
+    function updateTotal(element, unit) {
+        const total = document.getElementById("total");
+        total.textContent = `$${element.value}.00 USD`;
+        
+        // Hide all unit options initially
+        document.getElementById("unit-option-1").style.display = "none";
+        document.getElementById("unit-option-2").style.display = "none";
+        document.getElementById("unit-option-3").style.display = "none";
+        
+        // Show the selected unit's options
+        document.getElementById(`unit-option-${unit}`).style.display = "block";
+
+        // Remove active class from all options
+        const options = document.querySelectorAll('.option');
+        options.forEach(option => option.classList.remove('active'));
+
+        // Add active class to the selected option
+        element.closest('.option').classList.add('active');
+    }
+</script>
+
+</body>
+</html>
